@@ -7,7 +7,10 @@ import mongoose from "mongoose"
 import cors from "cors"
 import User from "./routes/Users.js"
 
-app.use(cors())
+app.use(cors({
+  origin: 'https://easy-bet-frontend-landing-page.vercel.app',
+  credentials: true
+}))
 app.use(express.json())
 app.use('/api',User)
 app.get('/',(req,res)=>{
